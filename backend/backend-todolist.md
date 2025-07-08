@@ -29,7 +29,7 @@
 ## Phase 2: Core Services Development
 
 ### 4. User Management Service
-- [ ] User registration and profile management
+- [x] User registration and profile management
 - [ ] Wallet connection and verification
 - [ ] User preferences and settings
 - [ ] Portfolio initialization

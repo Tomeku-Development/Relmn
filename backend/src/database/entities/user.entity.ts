@@ -4,6 +4,7 @@ import {
   Column,
   CreateDateColumn,
   UpdateDateColumn,
+  Index,
 } from 'typeorm';
 
 @Entity('users')
@@ -11,8 +12,16 @@ export class User {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column({ unique: true })
+  @Index({ unique: true })
+  @Column({ unique: true, nullable: true })
+  username: string;
+
+  @Index({ unique: true })
+  @Column()
   walletAddress: string;
+
+  @Column({ type: 'text', nullable: true })
+  bio: string;
 
   @CreateDateColumn()
   createdAt: Date;
