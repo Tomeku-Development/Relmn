@@ -5,7 +5,9 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
   Index,
+  OneToOne,
 } from 'typeorm';
+import { UserSetting } from './user-setting.entity';
 
 @Entity('users')
 export class User {
@@ -28,4 +30,7 @@ export class User {
 
   @UpdateDateColumn()
   updatedAt: Date;
+
+  @OneToOne(() => UserSetting, (settings) => settings.user, { cascade: true, eager: true })
+  settings: UserSetting;
 }

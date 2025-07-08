@@ -30,8 +30,8 @@
 
 ### 4. User Management Service
 - [x] User registration and profile management
-- [ ] Wallet connection and verification
-- [ ] User preferences and settings
+- [x] Wallet connection and verification
+- [x] User preferences and settings
 - [ ] Portfolio initialization
 - [ ] KYC/AML compliance hooks (future)
 
