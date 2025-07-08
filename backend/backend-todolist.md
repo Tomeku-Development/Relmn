@@ -11,11 +11,11 @@
 - [x] Add Swagger for API documentation
 
 ### 2. Database & Caching
-- [ ] Connect to Supabase PostgreSQL database
-- [ ] Design database schema for users, portfolios, transactions
-- [ ] Configure Redis for caching and session management
-- [ ] Set up database migrations and seeding
-- [ ] Implement connection pooling
+- [x] Connect to Supabase PostgreSQL database
+- [x] Design database schema for users, portfolios, transactions
+- [x] Configure Redis for caching and session management
+- [x] Set up database migrations and seeding
+- [x] Implement connection pooling
 - [ ] Set up database monitoring and logging
 
 ### 3. Authentication & Security
