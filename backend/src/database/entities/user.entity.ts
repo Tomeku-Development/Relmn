@@ -6,8 +6,10 @@ import {
   UpdateDateColumn,
   Index,
   OneToOne,
+  OneToMany,
 } from 'typeorm';
 import { UserSetting } from './user-setting.entity';
+import { Portfolio } from './portfolio.entity';
 
 @Entity('users')
 export class User {
@@ -33,4 +35,7 @@ export class User {
 
   @OneToOne(() => UserSetting, (settings) => settings.user, { cascade: true, eager: true })
   settings: UserSetting;
+
+  @OneToMany(() => Portfolio, (portfolio) => portfolio.user, { cascade: true })
+  portfolios: Portfolio[];
 }

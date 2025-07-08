@@ -5,6 +5,7 @@ import { User } from '../database/entities/user.entity';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { UserSetting } from '../database/entities/user-setting.entity';
 import { UpdateUserSettingsDto } from './dto/update-user-settings.dto';
+import { Portfolio } from '../database/entities/portfolio.entity';
 
 @Injectable()
 export class UsersService {
@@ -35,11 +36,14 @@ export class UsersService {
 
     // If the user doesn't exist, create a new user and their settings together.
     const newSettings = new UserSetting();
-    // The entity provides the defaults ('USD', 'dark').
+    const defaultPortfolio = new Portfolio();
+    defaultPortfolio.name = 'Main Portfolio';
+    defaultPortfolio.description = 'Default portfolio for tracking assets.';
 
     const newUser = this.usersRepository.create({
       walletAddress,
       settings: newSettings,
+      portfolios: [defaultPortfolio],
     });
 
     // Thanks to `cascade: true` on the User entity's settings relation,

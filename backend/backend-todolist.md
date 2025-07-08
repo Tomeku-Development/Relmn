@@ -32,7 +32,7 @@
 - [x] User registration and profile management
 - [x] Wallet connection and verification
 - [x] User preferences and settings
-- [ ] Portfolio initialization
+- [x] Portfolio initialization
 - [ ] KYC/AML compliance hooks (future)
 
 ### 5. OKX DEX API Integration Service
