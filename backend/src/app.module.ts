@@ -45,10 +45,12 @@ import { ApiKeysModule } from './api-keys/api-keys.module';
     AuthModule,
     UsersModule,
     ApiKeysModule,
-    ThrottlerModule.forRoot([{
-      ttl: 60000, // 60 seconds
-      limit: 20, // 20 requests per minute
-    }]),
+    ThrottlerModule.forRoot([
+      {
+        ttl: 60000, // 60 seconds
+        limit: 20, // 20 requests per minute
+      },
+    ]),
   ],
   controllers: [AppController],
   providers: [
