@@ -12,6 +12,7 @@ import { PortfoliosModule } from './portfolios/portfolios.module';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { ApiKeysModule } from './api-keys/api-keys.module';
+import { OkxModule } from './okx/okx.module';
 
 @Module({
   imports: [
@@ -53,6 +54,7 @@ import { ApiKeysModule } from './api-keys/api-keys.module';
         limit: 20, // 20 requests per minute
       },
     ]),
+    OkxModule,
   ],
   controllers: [AppController],
   providers: [

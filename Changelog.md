@@ -22,6 +22,12 @@ All notable changes to this project will be documented in this file.
   - New users now receive a default "Main Portfolio" upon creation.
   - Implemented a full CRUD API at `/portfolios` for authenticated users to manage their portfolios (Create, Read, Update, Delete).
 
+- **OKX DEX API Integration Service (Phase 2)**
+  - **Module Setup**: Created a new `OkxModule` to encapsulate all DEX integration logic.
+  - **Configuration**: Set up `HttpModule` and `ConfigModule` to manage the OKX API base URL and credentials securely via environment variables.
+  - **Authentication**: Implemented the required HMAC-SHA256 request signing mechanism in `OkxService`.
+  - **API Endpoint**: Exposed a `GET /okx/chains` endpoint to fetch the list of supported chains, protected by JWT authentication.
+
 #### Changed
 - Updated `findOrCreate` method in `UsersService` to handle the automatic creation of default settings and a main portfolio for new users.
 
