@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    depends_on:
+      - db
+      - redis
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-postgresql://user:password@db:5432/relmn?schema=public}
+      REDIS_URL: ${REDIS_URL:-redis://redis:6379}
+    networks:
+      - relmn-network
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    networks:
+      - relmn-network
+
+volumes:
+
+networks:
+  relmn-network:
+    driver: bridge
